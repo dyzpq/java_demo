@@ -55,7 +55,9 @@ public class ConcurrentHashMapDemo {
     /**
      *  解决方案：
      *      方法一：Collections.synchronizedMap(new HashMap<>())
-     *      *方法三：new ConcurrentHashMap<>() --->底层使用synchronized进行加锁
+     *      *方法三：new ConcurrentHashMap<>() --->底层使用
+     *                                              1.当数组位置还不存在数据时通过CAS进行处理
+     *                                              2.当数组位置已存在数据时通过synchronized进行加锁
      */
     public void after(){
 
