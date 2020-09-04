@@ -38,10 +38,13 @@ package lambda;
  */
 public class LambdaDemo {
 
+    /**
+     * 无参数，无返回值
+     */
     @Test
     public void test1(){
 
-        //内部类方式处理
+        //匿名内部类方式处理
         Runnable r1 = new Runnable() {
             @Override
             public void run() {
@@ -57,6 +60,9 @@ public class LambdaDemo {
         r2.run();
     }
 
+    /**
+     * 有一个参数，无返回值
+     */
     @Test
     public void test2(){
         Consumer<String> consumer = (x) -> System.out.println(x);
@@ -64,6 +70,9 @@ public class LambdaDemo {
         consumer.accept("lambda表达式测试一波");
     }
 
+    /**
+     * 只有一个参数，左边括号可以省略
+     */
     @Test
     public void test3(){
         Consumer<String> consumer = x -> System.out.println(x);
@@ -71,6 +80,9 @@ public class LambdaDemo {
         consumer.accept("lambda表达式测试一波");
     }
 
+    /**
+     * 有两个参数，有返回值
+     */
     @Test
     public void test4(){
 
@@ -83,6 +95,9 @@ public class LambdaDemo {
     }
 
 
+    /**
+     * 有返回值时，执行语句只有一条，可以省略大括号和return
+     */
     @Test
     public void test5(){
 
