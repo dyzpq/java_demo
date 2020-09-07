@@ -56,15 +56,21 @@ public class LambdaTest {
     @Test
     public void test2(){
 
-        //自己的版本
+        //第一种：自己的版本
         /*StringConvert stringConvert = (str -> str.toUpperCase().substring(2,5));
 
         String zasesffet = stringConvert.getValue("zasesffet");
         System.out.println(zasesffet);*/
 
-        //通过策略模式进行处理
+        //第二种：通过策略模式进行处理
         String zasesffet = this.getValue("zasesffet", str -> str.toUpperCase().substring(2, 5));
         System.out.println(zasesffet);
+
+
+        //第三种：方法引用方式
+        StringConvert sc = String::toUpperCase;
+        String zasesffet1 = sc.getValue("zasesffet");
+        System.out.println(zasesffet1);
     }
 
     //策略模式
