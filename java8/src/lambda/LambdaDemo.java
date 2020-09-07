@@ -35,6 +35,9 @@ package lambda;
  *      语法五：有返回值时，执行语句只有一条，可以省略大括号和return
  *              (x,y) -> x.compareTo(y)
  *
+ * 上联：左右遇一括号省
+ * 下联：左侧推断类型省
+ * 横批：能省则省
  */
 public class LambdaDemo {
 
