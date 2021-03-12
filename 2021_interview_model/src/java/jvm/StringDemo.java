@@ -46,6 +46,14 @@ public class StringDemo {
         String str4 = new StringBuilder("abc").toString();
         System.out.println(str4.intern() == str4);//false*/
 
+        /*//String sab=sa+sb实际上是调用StringBuilder.append()+toString()方法将sa和cd组装，所以sab是new String()对象，而s是在字符串常量池中，所以两个相比为false
+        String sa = "ab";
+        String sb = "cd";
+        String sab=sa+sb;
+        String s="abcd";
+        System.out.println(sab==s); // false*/
+
+
         /*BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String str;
         while ((str = br.readLine()) != null) {
@@ -57,7 +65,7 @@ public class StringDemo {
             System.out.println(sb);
         }*/
 
-        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+       /* BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
         String s = br.readLine();
         int index = s.indexOf(".");
         int a =Integer.parseInt(s.substring(0,index));
@@ -66,7 +74,11 @@ public class StringDemo {
             System.out.println(a+1);
         }else {
             System.out.println(a);
-        }
+        }*/
+
+
+
+
 
     }
 }
