@@ -162,21 +162,21 @@ public class SparseArrayDemo {
      * 4    4   10              0   0   0   0   8
      *                          0   0   0   0   10
      *
-     * @param sprarseArray
+     * @param sparseArray
      * @return
      */
-    static int[][] sparseArray2chessArray(int[][] sprarseArray){
-        int row = sprarseArray[0][0];
-        int col = sprarseArray[0][1];
+    static int[][] sparseArray2chessArray(int[][] sparseArray){
+        int row = sparseArray[0][0];
+        int col = sparseArray[0][1];
 
         //创建二维数组
         int[][] chessArray = new int[row][col];
 
         //二维数组赋值
-        for (int i = 1; i < sprarseArray.length; i++) {
-            int row1 = sprarseArray[i][0];
-            int col1 = sprarseArray[i][1];
-            int val1 = sprarseArray[i][2];
+        for (int i = 1; i < sparseArray.length; i++) {
+            int row1 = sparseArray[i][0];
+            int col1 = sparseArray[i][1];
+            int val1 = sparseArray[i][2];
 
             chessArray[row1][col1] = val1;
         }
