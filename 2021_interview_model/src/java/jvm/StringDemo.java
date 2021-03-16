@@ -54,6 +54,10 @@ public class StringDemo {
         System.out.println(sab==s); // false*/
 
 
+        /*String a = "A";
+        String b = a;
+        System.out.println(a == b);//true*/
+
         /*BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String str;
         while ((str = br.readLine()) != null) {
