@@ -1,5 +1,7 @@
 package proxy.staticProxy;
 
+import proxy.MyTranstation;
+
 /**
  * @Author coolDY
  * @Date 2021-03-17
@@ -8,18 +10,22 @@ public class UserDaoProxy implements IUserDao {
 
     private IUserDao target;
 
+    //事务类
+    private MyTranstation myTranstation;
+
     public UserDaoProxy(){
         super();
     }
 
-    public UserDaoProxy(IUserDao userDao){
+    public UserDaoProxy(IUserDao userDao,MyTranstation myTranstation){
         this.target = userDao;
+        this.myTranstation = myTranstation;
     }
 
     @Override
     public void save() {
-        System.out.println("事务开启");
+        myTranstation.before();
         target.save();
-        System.out.println("事务结束");
+        myTranstation.after();
     }
 }

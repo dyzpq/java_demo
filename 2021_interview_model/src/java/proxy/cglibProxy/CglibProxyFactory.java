@@ -3,6 +3,7 @@ package proxy.cglibProxy;
 import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.MethodInterceptor;
 import net.sf.cglib.proxy.MethodProxy;
+import proxy.MyTranstation;
 
 import java.lang.reflect.Method;
 
@@ -15,11 +16,13 @@ public class CglibProxyFactory implements MethodInterceptor {
     //维护一个目标对象
     private Object target;
 
-    public CglibProxyFactory(){
+    //事务类
+    private MyTranstation myTranstation;
 
-    }
+    public CglibProxyFactory(){}
 
-    public CglibProxyFactory(Object target){
+    public CglibProxyFactory(Object target,MyTranstation myTranstation){
+        this.myTranstation = myTranstation;
         this.target = target;
     }
 
@@ -37,11 +40,11 @@ public class CglibProxyFactory implements MethodInterceptor {
 
     @Override
     public Object intercept(Object o, Method method, Object[] args, MethodProxy methodProxy) throws Throwable {
-        System.out.println("开启事务");
+        myTranstation.before();
 
         Object returnValue  = method.invoke(target, args);
 
-        System.out.println("结束事务");
+        myTranstation.after();
 
         return returnValue;
     }

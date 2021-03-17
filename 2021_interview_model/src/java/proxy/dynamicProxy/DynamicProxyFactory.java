@@ -1,5 +1,7 @@
 package proxy.dynamicProxy;
 
+import proxy.MyTranstation;
+
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
@@ -13,12 +15,14 @@ public class DynamicProxyFactory{
     //维护一个目标对象
     private Object target;
 
-    public DynamicProxyFactory(){
+    //事务类
+    private MyTranstation myTranstation;
 
-    }
+    public DynamicProxyFactory(){}
 
-    public DynamicProxyFactory(Object target){
+    public DynamicProxyFactory(Object target,MyTranstation myTranstation){
         this.target = target;
+        this.myTranstation = myTranstation;
     }
 
     //给目标对象生成代理对象(方式一)
@@ -27,10 +31,10 @@ public class DynamicProxyFactory{
                 target.getClass().getClassLoader(),
                 target.getClass().getInterfaces(),
                 (proxy,method,args)->{
-                    System.out.println("开启事务");
+                    myTranstation.before();
                     //执行目标对象方法
                     Object returnValue = method.invoke(target, args);
-                    System.out.println("关闭事务");
+                    myTranstation.after();
                     return returnValue;
                 });
     }
