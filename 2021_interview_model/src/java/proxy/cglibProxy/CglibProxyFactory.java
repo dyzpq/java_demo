@@ -10,6 +10,7 @@ import java.lang.reflect.Method;
 /**
  * @Author coolDY
  * @Date 2021-03-17
+ *  Cglib目标类不需要实现接口也能实现
  */
 public class CglibProxyFactory implements MethodInterceptor {
 

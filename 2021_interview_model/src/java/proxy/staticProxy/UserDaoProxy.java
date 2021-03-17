@@ -5,6 +5,7 @@ import proxy.MyTranstation;
 /**
  * @Author coolDY
  * @Date 2021-03-17
+ *  目标类和代理实现相同的接口
  */
 public class UserDaoProxy implements IUserDao {
 

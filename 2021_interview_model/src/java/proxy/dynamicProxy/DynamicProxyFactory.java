@@ -9,6 +9,8 @@ import java.lang.reflect.Proxy;
 /**
  * @Author coolDY
  * @Date 2021-03-17
+ *
+ *  动态代理：目标类必须需要实现接口(JDK动态代理)
  */
 public class DynamicProxyFactory{
 

@@ -11,6 +11,8 @@ import proxy.staticProxy.UserDaoProxy;
 /**
  * @Author coolDY
  * @Date 2021-03-17
+ *
+ * 代理实现
  */
 public class Main {
     public static void main(String[] args) {
