@@ -1,0 +1,36 @@
+package proxy;
+
+import proxy.cglibProxy.CglibProxyFactory;
+import proxy.cglibProxy.UserService;
+import proxy.dynamicProxy.DynamicProxyFactory;
+import proxy.staticProxy.IUserDao;
+import proxy.staticProxy.UserDao;
+
+
+/**
+ * @Author coolDY
+ * @Date 2021-03-17
+ */
+public class Main {
+    public static void main(String[] args) {
+
+        //测试静态代理
+//        IUserDao target = new UserDao();
+//        IUserDao proxy = new UserDaoProxy(target);
+//        proxy.save();
+
+        //测试动态代理
+        // 目标对象
+//        IUserDao target = new UserDao();
+//        // 给目标对象，创建代理对象
+//        IUserDao proxy = (IUserDao)new DynamicProxyFactory(target).getProxyInstrance();
+//        // 执行方法   【代理对象】
+//        proxy.save();
+
+        //测试cglib代理
+//        UserService userService = new UserService();
+//        UserService proxy = (UserService)new CglibProxyFactory(userService).getProxyInstance();
+//        proxy.save();
+
+    }
+}
