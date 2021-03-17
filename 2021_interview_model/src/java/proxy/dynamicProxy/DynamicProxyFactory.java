@@ -32,6 +32,7 @@ public class DynamicProxyFactory{
         return Proxy.newProxyInstance(
                 target.getClass().getClassLoader(),
                 target.getClass().getInterfaces(),
+                //lambada表达式
                 (proxy,method,args)->{
                     myTranstation.before();
                     //执行目标对象方法
